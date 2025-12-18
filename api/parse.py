@@ -1,6 +1,5 @@
 """
 Vercel serverless function for parsing credit card statements.
-This wraps the backend logic for deployment on Vercel.
 """
 
 import os
@@ -33,8 +32,9 @@ def add_cors_headers(response):
     return response
 
 
-@app.route("/api/parse", methods=["POST", "OPTIONS"])
-def api_parse():
+@app.route("/", defaults={"path": ""}, methods=["POST", "OPTIONS"])
+@app.route("/<path:path>", methods=["POST", "OPTIONS"])
+def parse_handler(path):
     """
     Parse an uploaded PDF and return JSON with statement + transactions.
     Expects form-data with a single field: "file" (PDF).
@@ -74,9 +74,3 @@ def api_parse():
                 os.remove(tmp_path)
             except OSError:
                 pass
-
-
-# Vercel serverless function handler
-def handler(request):
-    with app.request_context(request.environ):
-        return app.full_dispatch_request()

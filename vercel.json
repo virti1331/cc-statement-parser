@@ -12,8 +12,17 @@
       "dest": "api/parse.py"
     },
     {
+      "src": "/",
+      "dest": "frontend/index.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "frontend/$1"
     }
-  ]
+  ],
+  "functions": {
+    "api/parse.py": {
+      "maxDuration": 30
+    }
+  }
 }
