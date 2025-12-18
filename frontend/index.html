@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart CC Parser</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center px-4 py-8">
+    <div class="max-w-6xl w-full space-y-8">
+      <!-- Header -->
+      <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-emerald-500 text-slate-950 flex items-center justify-center text-xl shadow-lg shadow-emerald-500/40">
+            💳
+          </div>
+          <div>
+            <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">
+              Smart Credit Card Parser
+            </h1>
+            <p class="text-xs md:text-sm text-slate-400 mt-1">
+              Upload your credit card statement and see a clear summary of your bill and spends.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 text-[11px] md:text-xs text-slate-300">
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-emerald-500/60 bg-emerald-500/10">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Live on your device
+          </span>
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-slate-700 bg-slate-900/60">
+            5 Banks · HDFC · ICICI · Axis · Chase · IDFC
+          </span>
+        </div>
+      </header>
+
+      <!-- Main card -->
+      <main class="bg-slate-900/60 border border-slate-800 rounded-3xl shadow-2xl shadow-emerald-500/10 p-6 md:p-8 space-y-6">
+        <!-- Upload row -->
+        <section class="flex flex-col lg:flex-row gap-6">
+          <div class="flex-1">
+            <h2 class="text-sm font-medium text-slate-200 mb-3">
+              1. Upload your statement
+            </h2>
+            <label
+              class="block cursor-pointer rounded-2xl border border-dashed border-slate-600 bg-slate-900/60 hover:border-emerald-400 hover:bg-slate-900/80 transition p-6 md:p-8 text-center"
+            >
+              <div class="flex flex-col items-center gap-3">
+                <div
+                  class="h-12 w-12 rounded-2xl bg-slate-800 flex items-center justify-center text-2xl text-emerald-400"
+                >
+                  ⬆️
+                </div>
+                <div>
+                  <p class="text-sm md:text-base font-medium text-slate-100">
+                    Drop a PDF here or click to browse
+                  </p>
+                  <p class="text-xs text-slate-400 mt-1">
+                    Supported issuers: HDFC, ICICI, Axis, Chase, IDFC
+                  </p>
+                  <p class="text-xs text-slate-400 mt-2">
+                    Selected:
+                    <span id="file-name" class="font-semibold text-emerald-300">
+                      None
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <input
+                id="file-input"
+                type="file"
+                accept=".pdf"
+                class="hidden"
+              />
+            </label>
+          </div>
+
+          <div class="w-full lg:w-64 space-y-3">
+            <h2 class="text-sm font-medium text-slate-200">
+              2. Parse the bill
+            </h2>
+            <button
+              id="parse-btn"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-emerald-500 text-slate-950 text-sm font-semibold shadow-lg shadow-emerald-500/40 hover:bg-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed transition"
+            >
+              <span>Parse statement</span>
+            </button>
+            <p class="text-[11px] text-slate-400">
+              We only read the file locally and show you the extracted details. Always confirm numbers with your bank.
+            </p>
+          </div>
+        </section>
+
+        <!-- Alerts -->
+        <section id="alert-area" class="space-y-2 text-sm"></section>
+
+        <!-- Output -->
+        <section id="output" class="space-y-6 hidden">
+          <!-- Summary cards -->
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-slate-900 rounded-2xl border border-slate-700 p-4">
+              <p class="text-[11px] uppercase tracking-wide text-slate-400">
+                Bank
+              </p>
+              <p id="summary-issuer" class="mt-1 text-lg font-semibold text-emerald-300">
+                –
+              </p>
+            </div>
+            <div class="bg-slate-900 rounded-2xl border border-slate-700 p-4">
+              <p class="text-[11px] uppercase tracking-wide text-slate-400">
+                Card (last 4)
+              </p>
+              <p id="summary-card" class="mt-1 text-lg font-semibold">
+                –
+              </p>
+            </div>
+            <div class="bg-slate-900 rounded-2xl border border-slate-700 p-4">
+              <p class="text-[11px] uppercase tracking-wide text-slate-400">
+                Billing period
+              </p>
+              <p id="summary-period" class="mt-1 text-lg font-semibold">
+                –
+              </p>
+            </div>
+            <div class="bg-slate-900 rounded-2xl border border-slate-700 p-4">
+              <p class="text-[11px] uppercase tracking-wide text-slate-400">
+                Payment due date
+              </p>
+              <p id="summary-due" class="mt-1 text-lg font-semibold">
+                –
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-400 rounded-2xl p-4 shadow-lg shadow-emerald-500/50">
+              <p class="text-[11px] uppercase tracking-wide text-emerald-950">
+                Total amount to pay
+              </p>
+              <p id="summary-total" class="mt-1 text-2xl font-bold text-emerald-950">
+                –
+              </p>
+            </div>
+          </div>
+
+          <!-- Transactions -->
+          <div class="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden">
+            <div class="px-4 md:px-5 py-3 border-b border-slate-800 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <div class="flex items-center gap-2">
+                <div class="h-7 w-7 rounded-full bg-slate-800 flex items-center justify-center text-xs">
+                  🧾
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-slate-100">
+                    Transactions
+                  </p>
+                  <p id="tx-count" class="text-[11px] text-slate-400">
+                    0 items
+                  </p>
+                </div>
+              </div>
+
+              <div id="filters" class="hidden md:flex flex-wrap gap-2 text-[11px] text-slate-300">
+                <input
+                  id="filter-text"
+                  type="text"
+                  placeholder="Search text"
+                  class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-950/60 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                />
+                <input
+                  id="filter-date-from"
+                  type="text"
+                  placeholder="From date (dd/mm/yyyy)"
+                  class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-950/60 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                />
+                <input
+                  id="filter-date-to"
+                  type="text"
+                  placeholder="To date (dd/mm/yyyy)"
+                  class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-950/60 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                />
+                <input
+                  id="filter-amount-min"
+                  type="number"
+                  step="0.01"
+                  placeholder="Min amount"
+                  class="w-24 px-2 py-1 rounded-lg border border-slate-700 bg-slate-950/60 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                />
+                <input
+                  id="filter-amount-max"
+                  type="number"
+                  step="0.01"
+                  placeholder="Max amount"
+                  class="w-24 px-2 py-1 rounded-lg border border-slate-700 bg-slate-950/60 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                />
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-xs md:text-sm">
+                <thead class="bg-slate-900/80 text-slate-400 border-b border-slate-800">
+                  <tr>
+                    <th class="px-3 md:px-4 py-2 text-left font-medium">Date</th>
+                    <th class="px-3 md:px-4 py-2 text-left font-medium">Description</th>
+                    <th class="px-3 md:px-4 py-2 text-right font-medium">Amount</th>
+                  </tr>
+                </thead>
+                <tbody id="tx-body" class="divide-y divide-slate-800">
+                  <tr>
+                    <td colspan="3" class="px-4 py-4 text-center text-slate-500">
+                      No transactions yet. Upload a statement to see details.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="flex flex-col md:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
+        <span>Smart CC Parser · Personal finance helper (not a bank product).</span>
+        <span>Always confirm amounts with your official statement.</span>
+      </footer>
+    </div>
+
+    <script>
+      const API_URL = "http://127.0.0.1:5000/api/parse";
+
+      const fileInput = document.getElementById("file-input");
+      const fileNameSpan = document.getElementById("file-name");
+      const parseBtn = document.getElementById("parse-btn");
+      const alertArea = document.getElementById("alert-area");
+      const outputSection = document.getElementById("output");
+      const txBody = document.getElementById("tx-body");
+      const txCount = document.getElementById("tx-count");
+      const filtersBar = document.getElementById("filters");
+
+      const summaryIssuer = document.getElementById("summary-issuer");
+      const summaryCard = document.getElementById("summary-card");
+      const summaryPeriod = document.getElementById("summary-period");
+      const summaryDue = document.getElementById("summary-due");
+      const summaryTotal = document.getElementById("summary-total");
+
+      const filterText = document.getElementById("filter-text");
+      const filterDateFrom = document.getElementById("filter-date-from");
+      const filterDateTo = document.getElementById("filter-date-to");
+      const filterAmountMin = document.getElementById("filter-amount-min");
+      const filterAmountMax = document.getElementById("filter-amount-max");
+
+      let currentTransactions = [];
+
+      function showAlert(message, type = "error") {
+        alertArea.innerHTML = "";
+        const div = document.createElement("div");
+        div.className =
+          "px-4 py-3 rounded-xl border text-sm " +
+          (type === "error"
+            ? "bg-red-500/10 border-red-500/40 text-red-200"
+            : "bg-emerald-500/10 border-emerald-500/40 text-emerald-200");
+        div.textContent = message;
+        alertArea.appendChild(div);
+      }
+
+      function clearAlert() {
+        alertArea.innerHTML = "";
+      }
+
+      function parseDate(value) {
+        if (!value) return null;
+        const parts = value.split(/[\/\-]/);
+        if (parts.length !== 3) return null;
+        const [d, m, y] = parts.map((p) => parseInt(p, 10));
+        if (!d || !m || !y) return null;
+        return new Date(y, m - 1, d);
+      }
+
+      function parseAmount(value) {
+        if (!value) return null;
+        const cleaned = value.replace(/[^0-9.\-]/g, "");
+        const num = parseFloat(cleaned);
+        return Number.isNaN(num) ? null : num;
+      }
+
+      function renderTransactions(transactions) {
+        txBody.innerHTML = "";
+        if (!transactions.length) {
+          txBody.innerHTML =
+            '<tr><td colspan="3" class="px-4 py-4 text-center text-slate-500">No transactions parsed from this statement.</td></tr>';
+          return;
+        }
+
+        transactions.forEach((tx) => {
+          const tr = document.createElement("tr");
+          tr.dataset.date = tx.date || "";
+          tr.dataset.description = tx.description || "";
+          tr.dataset.amount = tx.amount || "";
+
+          const tdDate = document.createElement("td");
+          tdDate.className = "px-3 md:px-4 py-2 whitespace-nowrap text-slate-200";
+          tdDate.textContent = tx.date || "-";
+
+          const tdDesc = document.createElement("td");
+          tdDesc.className = "px-3 md:px-4 py-2 text-slate-200";
+          tdDesc.textContent = tx.description || "-";
+
+          const tdAmount = document.createElement("td");
+          tdAmount.className =
+            "px-3 md:px-4 py-2 text-right font-medium " +
+            (tx.amount && String(tx.amount).startsWith("-")
+              ? "text-emerald-300"
+              : "text-slate-100");
+          tdAmount.textContent = tx.amount || "-";
+
+          tr.appendChild(tdDate);
+          tr.appendChild(tdDesc);
+          tr.appendChild(tdAmount);
+          txBody.appendChild(tr);
+        });
+      }
+
+      function applyFilters() {
+        if (!currentTransactions.length) return;
+
+        const textQuery = (filterText?.value || "").toLowerCase();
+        const fromDate = parseDate(filterDateFrom?.value || "");
+        const toDate = parseDate(filterDateTo?.value || "");
+        const minAmount = parseAmount(filterAmountMin?.value || "");
+        const maxAmount = parseAmount(filterAmountMax?.value || "");
+
+        const filtered = currentTransactions.filter((tx) => {
+          const desc = (tx.description || "").toLowerCase();
+          const amountStr = String(tx.amount || "");
+          const dateStr = String(tx.date || "");
+
+          const rowDate = parseDate(dateStr);
+          const rowAmount = parseAmount(amountStr);
+
+          let visible = true;
+
+          if (textQuery) {
+            const dateLower = dateStr.toLowerCase();
+            const amountLower = amountStr.toLowerCase();
+            if (
+              !desc.includes(textQuery) &&
+              !amountLower.includes(textQuery) &&
+              !dateLower.includes(textQuery)
+            ) {
+              visible = false;
+            }
+          }
+
+          if (visible && fromDate && rowDate) {
+            if (rowDate < fromDate) visible = false;
+          }
+
+          if (visible && toDate && rowDate) {
+            if (rowDate > toDate) visible = false;
+          }
+
+          if (visible && minAmount !== null && rowAmount !== null) {
+            if (rowAmount < minAmount) visible = false;
+          }
+
+          if (visible && maxAmount !== null && rowAmount !== null) {
+            if (rowAmount > maxAmount) visible = false;
+          }
+
+          return visible;
+        });
+
+        renderTransactions(filtered);
+      }
+
+      // Wire up filters
+      [filterText, filterDateFrom, filterDateTo, filterAmountMin, filterAmountMax].forEach(
+        (input) => {
+          if (input) {
+            input.addEventListener("input", applyFilters);
+          }
+        }
+      );
+
+      // File picker events
+      const uploadLabel = document.querySelector("label[for='file-input']") || null;
+
+      if (fileInput) {
+        fileInput.addEventListener("change", () => {
+          const file = fileInput.files[0];
+          fileNameSpan.textContent = file ? file.name : "None";
+        });
+      }
+
+      if (uploadLabel) {
+        uploadLabel.addEventListener("click", () => {
+          fileInput?.click();
+        });
+      }
+
+      // Main parse button
+      parseBtn.addEventListener("click", async () => {
+        clearAlert();
+
+        const file = fileInput.files[0];
+        if (!file) {
+          showAlert("Please select a PDF statement first.");
+          return;
+        }
+
+        parseBtn.disabled = true;
+        parseBtn.textContent = "Parsing...";
+
+        try {
+          const formData = new FormData();
+          formData.append("file", file);
+
+          const response = await fetch(API_URL, {
+            method: "POST",
+            body: formData,
+          });
+
+          const json = await response.json();
+
+          if (!response.ok || !json.success) {
+            showAlert(json.error || "Failed to parse statement.");
+          } else {
+            const data = json.data || {};
+
+            summaryIssuer.textContent = data.issuer || "-";
+            summaryCard.textContent = data.card_last_4_digits || "-";
+            summaryPeriod.textContent = data.billing_period || "-";
+            summaryDue.textContent = data.payment_due_date || "-";
+            summaryTotal.textContent = data.total_amount_due || "-";
+
+            currentTransactions = Array.isArray(data.transactions)
+              ? data.transactions
+              : [];
+
+            txCount.textContent = `${currentTransactions.length} item${
+              currentTransactions.length === 1 ? "" : "s"
+            }`;
+
+            if (currentTransactions.length > 5) {
+              filtersBar.classList.remove("hidden");
+            } else {
+              filtersBar.classList.add("hidden");
+            }
+
+            renderTransactions(currentTransactions);
+            outputSection.classList.remove("hidden");
+            showAlert("Statement parsed successfully.", "success");
+          }
+        } catch (err) {
+          showAlert("Unable to reach the parser API. Is the backend running?");
+        } finally {
+          parseBtn.disabled = false;
+          parseBtn.textContent = "Parse statement";
+        }
+      });
+    </script>
+  </body>
+</html>
+
+

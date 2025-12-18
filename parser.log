@@ -1,0 +1,342 @@
+2025-12-17 14:03:52,811 - ERROR - PDF file not found: samples/axisbank_statement.pdg
+2025-12-17 14:03:58,290 - INFO - Processing PDF: samples/axisbank_statement.pdf
+2025-12-17 14:03:59,413 - ERROR - No text extracted from PDF
+2025-12-17 14:03:59,413 - ERROR - Unexpected error: PDF appears to be empty or contains no extractable text
+Traceback (most recent call last):
+  File "D:\credit_card_parser\main.py", line 95, in main
+    result = parse_statement(pdf_path)
+  File "D:\credit_card_parser\main.py", line 52, in parse_statement
+    raise ValueError("PDF appears to be empty or contains no extractable text")
+ValueError: PDF appears to be empty or contains no extractable text
+2025-12-17 14:04:24,192 - INFO - Processing PDF: samples/axisbank_statement.pdf
+2025-12-17 14:04:24,300 - ERROR - No text extracted from PDF
+2025-12-17 14:04:24,301 - ERROR - Unexpected error: PDF appears to be empty or contains no extractable text
+Traceback (most recent call last):
+  File "D:\credit_card_parser\main.py", line 95, in main
+    result = parse_statement(pdf_path)
+  File "D:\credit_card_parser\main.py", line 52, in parse_statement
+    raise ValueError("PDF appears to be empty or contains no extractable text")
+ValueError: PDF appears to be empty or contains no extractable text
+2025-12-17 14:16:12,636 - INFO - Processing PDF: samples/HDFC_statement.pdf
+2025-12-17 14:16:12,884 - INFO - Extracted 3671 characters from PDF
+2025-12-17 14:16:12,885 - INFO - Detected issuer: HDFC Bank
+2025-12-17 14:16:12,885 - INFO - Parsing statement using HDFC parser
+2025-12-17 14:16:12,886 - INFO - Extracted card_last_4_digits: 4341
+2025-12-17 14:16:12,886 - WARNING - Could not extract billing_period for HDFC
+2025-12-17 14:16:12,887 - WARNING - Could not extract payment_due_date for HDFC
+2025-12-17 14:16:12,887 - WARNING - Could not extract total_amount_due for HDFC
+2025-12-17 14:16:12,887 - INFO - Parsing completed successfully
+2025-12-17 14:16:42,494 - INFO - Processing PDF: samples/HDFC_statement.pdf
+2025-12-17 14:16:42,712 - INFO - Extracted 3671 characters from PDF
+2025-12-17 14:16:42,713 - INFO - Detected issuer: HDFC Bank
+2025-12-17 14:16:42,713 - INFO - Parsing statement using HDFC parser
+2025-12-17 14:16:42,714 - INFO - Extracted card_last_4_digits: 4341
+2025-12-17 14:16:42,714 - WARNING - Could not extract billing_period for HDFC
+2025-12-17 14:16:42,715 - WARNING - Could not extract payment_due_date for HDFC
+2025-12-17 14:16:42,715 - WARNING - Could not extract total_amount_due for HDFC
+2025-12-17 14:16:42,715 - INFO - Parsing completed successfully
+2025-12-17 14:19:59,672 - INFO - Processing PDF: samples/HDFC_statement.pdf
+2025-12-17 14:19:59,918 - INFO - Extracted 3671 characters from PDF
+2025-12-17 14:19:59,919 - INFO - Detected issuer: HDFC Bank
+2025-12-17 14:19:59,919 - INFO - Parsing statement using HDFC parser
+2025-12-17 14:19:59,920 - INFO - Extracted card_last_4_digits: 4341
+2025-12-17 14:19:59,920 - INFO - Extracted billing_period: 23/10/2024
+2025-12-17 14:19:59,921 - INFO - Extracted payment_due_date: 12/11/2024
+2025-12-17 14:19:59,921 - INFO - Extracted total_amount_due: 83,794.00
+2025-12-17 14:19:59,921 - INFO - Parsing completed successfully
+2025-12-17 14:25:03,989 - INFO - Processing PDF: samples/axisbank_statement.pdf
+2025-12-17 14:25:04,155 - INFO - Extracted 2540 characters from PDF
+2025-12-17 14:25:04,155 - INFO - Detected issuer: Axis Bank
+2025-12-17 14:25:04,156 - INFO - Parsing statement using AXIS parser
+2025-12-17 14:25:04,156 - INFO - Extracted card_last_4_digits: 1060
+2025-12-17 14:25:04,156 - WARNING - Could not extract billing_period for Axis
+2025-12-17 14:25:04,157 - WARNING - Could not extract payment_due_date for Axis
+2025-12-17 14:25:04,158 - WARNING - Could not extract total_amount_due for Axis
+2025-12-17 14:25:04,158 - INFO - Parsing completed successfully
+2025-12-17 14:27:00,278 - INFO - Processing PDF: samples/axisbank_statement.pdf
+2025-12-17 14:27:00,459 - INFO - Extracted 2540 characters from PDF
+2025-12-17 14:27:00,460 - INFO - Detected issuer: Axis Bank
+2025-12-17 14:27:00,460 - INFO - Parsing statement using AXIS parser
+2025-12-17 14:27:00,460 - INFO - Extracted card_last_4_digits: 1060
+2025-12-17 14:27:00,460 - WARNING - Could not extract billing_period for Axis
+2025-12-17 14:27:00,461 - WARNING - Could not extract payment_due_date for Axis
+2025-12-17 14:27:00,461 - INFO - Extracted total_amount_due: 1,289.00
+2025-12-17 14:27:00,461 - INFO - Parsing completed successfully
+2025-12-17 14:27:44,183 - INFO - Processing PDF: samples/axisbank_statement.pdf
+2025-12-17 14:27:44,354 - INFO - Extracted 2540 characters from PDF
+2025-12-17 14:27:44,355 - INFO - Detected issuer: Axis Bank
+2025-12-17 14:27:44,355 - INFO - Parsing statement using AXIS parser
+2025-12-17 14:27:44,355 - INFO - Extracted card_last_4_digits: 1060
+2025-12-17 14:27:44,355 - INFO - Extracted billing_period: 16/04/2021 - 15/05/2021
+2025-12-17 14:27:44,355 - INFO - Extracted payment_due_date: 04/06/2021
+2025-12-17 14:27:44,356 - INFO - Extracted total_amount_due: 1,289.00
+2025-12-17 14:27:44,356 - INFO - Parsing completed successfully
+2025-12-17 14:27:50,786 - INFO - Processing PDF: samples\axisbank_statement.pdf
+2025-12-17 14:27:50,959 - INFO - Extracted 2540 characters from PDF
+2025-12-17 14:27:50,960 - INFO - Detected issuer: Axis Bank
+2025-12-17 14:27:50,960 - INFO - Parsing statement using AXIS parser
+2025-12-17 14:27:50,960 - INFO - Extracted card_last_4_digits: 1060
+2025-12-17 14:27:50,961 - INFO - Extracted billing_period: 16/04/2021 - 15/05/2021
+2025-12-17 14:27:50,961 - INFO - Extracted payment_due_date: 04/06/2021
+2025-12-17 14:27:50,962 - INFO - Extracted total_amount_due: 1,289.00
+2025-12-17 14:27:50,962 - INFO - Parsing completed successfully
+2025-12-18 16:47:04,775 - INFO - Processing PDF: samples/hdfc_statement.pdf
+2025-12-18 16:47:09,045 - INFO - Extracted 3671 characters from PDF
+2025-12-18 16:47:09,048 - INFO - Detected issuer: HDFC Bank
+2025-12-18 16:47:09,049 - INFO - Parsing statement using HDFC parser
+2025-12-18 16:47:09,051 - INFO - Extracted card_last_4_digits: 4341
+2025-12-18 16:47:09,058 - INFO - Extracted billing_period: 23/10/2024
+2025-12-18 16:47:09,073 - INFO - Extracted payment_due_date: 12/11/2024
+2025-12-18 16:47:09,097 - INFO - Extracted total_amount_due: 83,794.00
+2025-12-18 16:47:09,104 - INFO - Parsing completed successfully
+2025-12-18 17:14:44,047 - INFO - Processing PDF: samples/ICICI_statement.pdf
+2025-12-18 17:14:46,661 - INFO - Extracted 6417 characters from PDF
+2025-12-18 17:14:46,663 - INFO - Detected issuer: ICICI Bank
+2025-12-18 17:14:46,664 - INFO - Parsing statement using ICICI parser
+2025-12-18 17:14:46,665 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 17:14:46,669 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 17:14:46,670 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 17:14:46,673 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 17:14:46,677 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 17:14:46,678 - INFO - Parsing completed successfully
+2025-12-18 17:19:04,117 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:19:04,120 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:19:04,170 - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-18 17:19:05,033 - WARNING -  * Debugger is active!
+2025-12-18 17:19:05,042 - INFO -  * Debugger PIN: 545-270-329
+2025-12-18 17:19:56,262 - INFO - 127.0.0.1 - - [18/Dec/2025 17:19:56] "GET / HTTP/1.1" 200 -
+2025-12-18 17:19:57,443 - INFO - 127.0.0.1 - - [18/Dec/2025 17:19:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-18 17:20:59,148 - INFO - 127.0.0.1 - - [18/Dec/2025 17:20:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-18 17:24:15,291 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:24:15,291 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:24:17,334 - INFO - 127.0.0.1 - - [18/Dec/2025 17:24:17] "GET / HTTP/1.1" 200 -
+2025-12-18 17:24:18,329 - INFO - 127.0.0.1 - - [18/Dec/2025 17:24:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-18 17:24:26,890 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp6b230uoh.pdf
+2025-12-18 17:24:28,350 - INFO - Extracted 6417 characters from PDF
+2025-12-18 17:24:28,351 - INFO - Detected issuer: ICICI Bank
+2025-12-18 17:24:28,351 - INFO - Parsing statement using ICICI parser
+2025-12-18 17:24:28,352 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 17:24:28,353 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 17:24:28,354 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 17:24:28,354 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 17:24:28,356 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 17:24:28,357 - INFO - Parsing completed successfully
+2025-12-18 17:24:28,390 - INFO - 127.0.0.1 - - [18/Dec/2025 17:24:28] "POST / HTTP/1.1" 200 -
+2025-12-18 17:28:43,429 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:28:43,443 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:28:45,296 - INFO - 127.0.0.1 - - [18/Dec/2025 17:28:45] "GET / HTTP/1.1" 200 -
+2025-12-18 17:28:46,218 - INFO - 127.0.0.1 - - [18/Dec/2025 17:28:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-18 17:28:56,503 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpunkmrcwg.pdf
+2025-12-18 17:28:58,481 - INFO - Extracted 16251 characters from PDF
+2025-12-18 17:28:58,483 - INFO - Detected issuer: IDFC First Bank
+2025-12-18 17:28:58,483 - INFO - Parsing statement using IDFC parser
+2025-12-18 17:28:58,484 - INFO - Extracted card_last_4_digits (IDFC): 0010
+2025-12-18 17:28:58,485 - WARNING - Could not extract billing_period for IDFC
+2025-12-18 17:28:58,485 - INFO - Extracted payment_due_date (IDFC): 06/03/2024
+2025-12-18 17:28:58,486 - WARNING - Could not extract total_amount_due for IDFC
+2025-12-18 17:28:58,489 - INFO - Extracted 3 transactions for IDFC
+2025-12-18 17:28:58,490 - INFO - Parsing completed successfully
+2025-12-18 17:28:58,531 - INFO - 127.0.0.1 - - [18/Dec/2025 17:28:58] "POST / HTTP/1.1" 200 -
+2025-12-18 17:29:37,090 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp56sbd9i_.pdf
+2025-12-18 17:29:38,424 - INFO - Extracted 6417 characters from PDF
+2025-12-18 17:29:38,428 - INFO - Detected issuer: ICICI Bank
+2025-12-18 17:29:38,428 - INFO - Parsing statement using ICICI parser
+2025-12-18 17:29:38,429 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 17:29:38,430 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 17:29:38,432 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 17:29:38,433 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 17:29:38,435 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 17:29:38,435 - INFO - Parsing completed successfully
+2025-12-18 17:29:38,454 - INFO - 127.0.0.1 - - [18/Dec/2025 17:29:38] "POST / HTTP/1.1" 200 -
+2025-12-18 17:29:54,720 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpf9o5qn1t.pdf
+2025-12-18 17:29:55,545 - INFO - Extracted 2540 characters from PDF
+2025-12-18 17:29:55,545 - INFO - Detected issuer: Axis Bank
+2025-12-18 17:29:55,546 - INFO - Parsing statement using AXIS parser
+2025-12-18 17:29:55,550 - INFO - Extracted card_last_4_digits: 1060
+2025-12-18 17:29:55,551 - INFO - Extracted billing_period: 16/04/2021 - 15/05/2021
+2025-12-18 17:29:55,554 - INFO - Extracted payment_due_date: 04/06/2021
+2025-12-18 17:29:55,555 - INFO - Extracted total_amount_due: 1,289.00
+2025-12-18 17:29:55,557 - INFO - Extracted 5 transactions for Axis
+2025-12-18 17:29:55,557 - INFO - Parsing completed successfully
+2025-12-18 17:29:55,595 - INFO - 127.0.0.1 - - [18/Dec/2025 17:29:55] "POST / HTTP/1.1" 200 -
+2025-12-18 17:33:51,956 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:33:51,957 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:33:53,322 - INFO - 127.0.0.1 - - [18/Dec/2025 17:33:53] "GET / HTTP/1.1" 200 -
+2025-12-18 17:34:06,086 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpdzix3g42.pdf
+2025-12-18 17:34:07,014 - INFO - Extracted 1885 characters from PDF
+2025-12-18 17:34:07,019 - ERROR - Unable to detect credit card issuer from PDF
+2025-12-18 17:34:07,048 - INFO - 127.0.0.1 - - [18/Dec/2025 17:34:07] "POST / HTTP/1.1" 200 -
+2025-12-18 17:34:25,891 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp_gvn80xd.pdf
+2025-12-18 17:34:26,752 - INFO - Extracted 3671 characters from PDF
+2025-12-18 17:34:26,752 - INFO - Detected issuer: HDFC Bank
+2025-12-18 17:34:26,753 - INFO - Parsing statement using HDFC parser
+2025-12-18 17:34:26,754 - INFO - Extracted card_last_4_digits: 4341
+2025-12-18 17:34:26,754 - INFO - Extracted billing_period: 23/10/2024
+2025-12-18 17:34:26,755 - INFO - Extracted payment_due_date: 12/11/2024
+2025-12-18 17:34:26,756 - INFO - Extracted total_amount_due: 83,794.00
+2025-12-18 17:34:26,758 - INFO - Extracted 5 transactions for HDFC
+2025-12-18 17:34:26,758 - INFO - Parsing completed successfully
+2025-12-18 17:34:26,787 - INFO - 127.0.0.1 - - [18/Dec/2025 17:34:26] "POST / HTTP/1.1" 200 -
+2025-12-18 17:37:54,440 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:37:54,440 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:37:55,885 - INFO - 127.0.0.1 - - [18/Dec/2025 17:37:55] "GET / HTTP/1.1" 200 -
+2025-12-18 17:38:07,298 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp5cuba7ka.pdf
+2025-12-18 17:38:08,732 - INFO - Extracted 6417 characters from PDF
+2025-12-18 17:38:08,733 - INFO - Detected issuer: ICICI Bank
+2025-12-18 17:38:08,734 - INFO - Parsing statement using ICICI parser
+2025-12-18 17:38:08,734 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 17:38:08,735 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 17:38:08,737 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 17:38:08,739 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 17:38:08,741 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 17:38:08,741 - INFO - Parsing completed successfully
+2025-12-18 17:38:08,771 - INFO - 127.0.0.1 - - [18/Dec/2025 17:38:08] "POST / HTTP/1.1" 200 -
+2025-12-18 17:42:45,791 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:42:45,791 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:42:47,198 - INFO - 127.0.0.1 - - [18/Dec/2025 17:42:47] "GET / HTTP/1.1" 200 -
+2025-12-18 17:42:57,484 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp96sgtyny.pdf
+2025-12-18 17:42:58,128 - INFO - Extracted 1885 characters from PDF
+2025-12-18 17:42:58,129 - ERROR - Unable to detect credit card issuer from PDF
+2025-12-18 17:42:58,157 - INFO - 127.0.0.1 - - [18/Dec/2025 17:42:58] "POST / HTTP/1.1" 200 -
+2025-12-18 17:43:06,590 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpx_x6u48q.pdf
+2025-12-18 17:43:08,410 - INFO - Extracted 16251 characters from PDF
+2025-12-18 17:43:08,411 - INFO - Detected issuer: IDFC First Bank
+2025-12-18 17:43:08,412 - INFO - Parsing statement using IDFC parser
+2025-12-18 17:43:08,412 - INFO - Extracted card_last_4_digits (IDFC): 0010
+2025-12-18 17:43:08,414 - WARNING - Could not extract billing_period for IDFC
+2025-12-18 17:43:08,415 - INFO - Extracted payment_due_date (IDFC): 06/03/2024
+2025-12-18 17:43:08,416 - WARNING - Could not extract total_amount_due for IDFC
+2025-12-18 17:43:08,418 - INFO - Extracted 3 transactions for IDFC
+2025-12-18 17:43:08,419 - INFO - Parsing completed successfully
+2025-12-18 17:43:08,450 - INFO - 127.0.0.1 - - [18/Dec/2025 17:43:08] "POST / HTTP/1.1" 200 -
+2025-12-18 17:43:22,223 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp7s454j_y.pdf
+2025-12-18 17:43:23,593 - INFO - Extracted 6417 characters from PDF
+2025-12-18 17:43:23,594 - INFO - Detected issuer: ICICI Bank
+2025-12-18 17:43:23,594 - INFO - Parsing statement using ICICI parser
+2025-12-18 17:43:23,597 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 17:43:23,599 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 17:43:23,600 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 17:43:23,601 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 17:43:23,603 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 17:43:23,604 - INFO - Parsing completed successfully
+2025-12-18 17:43:23,635 - INFO - 127.0.0.1 - - [18/Dec/2025 17:43:23] "POST / HTTP/1.1" 200 -
+2025-12-18 17:46:53,544 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:46:53,545 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:46:54,910 - INFO - 127.0.0.1 - - [18/Dec/2025 17:46:54] "GET / HTTP/1.1" 200 -
+2025-12-18 17:58:01,864 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 17:58:01,864 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 17:58:03,298 - INFO - 127.0.0.1 - - [18/Dec/2025 17:58:03] "GET / HTTP/1.1" 200 -
+2025-12-18 17:58:11,140 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpcgcntou6.pdf
+2025-12-18 17:58:13,911 - INFO - Extracted 16251 characters from PDF
+2025-12-18 17:58:13,913 - INFO - Detected issuer: IDFC First Bank
+2025-12-18 17:58:13,913 - INFO - Parsing statement using IDFC parser
+2025-12-18 17:58:13,914 - INFO - Extracted card_last_4_digits (IDFC): 0010
+2025-12-18 17:58:13,915 - WARNING - Could not extract billing_period for IDFC
+2025-12-18 17:58:13,916 - INFO - Extracted payment_due_date (IDFC): 06/03/2024
+2025-12-18 17:58:13,917 - WARNING - Could not extract total_amount_due for IDFC
+2025-12-18 17:58:13,922 - INFO - Extracted 3 transactions for IDFC
+2025-12-18 17:58:13,923 - INFO - Parsing completed successfully
+2025-12-18 17:58:13,951 - INFO - 127.0.0.1 - - [18/Dec/2025 17:58:13] "POST / HTTP/1.1" 200 -
+2025-12-18 17:58:29,521 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpu9ewj9au.pdf
+2025-12-18 17:58:30,590 - INFO - Extracted 6417 characters from PDF
+2025-12-18 17:58:30,590 - INFO - Detected issuer: ICICI Bank
+2025-12-18 17:58:30,591 - INFO - Parsing statement using ICICI parser
+2025-12-18 17:58:30,591 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 17:58:30,592 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 17:58:30,593 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 17:58:30,594 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 17:58:30,595 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 17:58:30,595 - INFO - Parsing completed successfully
+2025-12-18 17:58:30,608 - INFO - 127.0.0.1 - - [18/Dec/2025 17:58:30] "POST / HTTP/1.1" 200 -
+2025-12-18 18:03:36,909 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 18:03:36,910 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 18:03:38,751 - INFO - 127.0.0.1 - - [18/Dec/2025 18:03:38] "GET / HTTP/1.1" 200 -
+2025-12-18 18:03:39,679 - INFO - 127.0.0.1 - - [18/Dec/2025 18:03:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-18 18:04:48,534 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp5lcz9ycg.pdf
+2025-12-18 18:04:49,047 - INFO - Extracted 1885 characters from PDF
+2025-12-18 18:04:49,048 - ERROR - Unable to detect credit card issuer from PDF
+2025-12-18 18:04:49,060 - INFO - 127.0.0.1 - - [18/Dec/2025 18:04:49] "POST / HTTP/1.1" 200 -
+2025-12-18 18:04:58,582 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmphgnbwedc.pdf
+2025-12-18 18:04:59,910 - INFO - Extracted 16251 characters from PDF
+2025-12-18 18:04:59,910 - INFO - Detected issuer: IDFC First Bank
+2025-12-18 18:04:59,911 - INFO - Parsing statement using IDFC parser
+2025-12-18 18:04:59,912 - INFO - Extracted card_last_4_digits (IDFC): 0010
+2025-12-18 18:04:59,913 - WARNING - Could not extract billing_period for IDFC
+2025-12-18 18:04:59,913 - INFO - Extracted payment_due_date (IDFC): 06/03/2024
+2025-12-18 18:04:59,914 - WARNING - Could not extract total_amount_due for IDFC
+2025-12-18 18:04:59,916 - INFO - Extracted 3 transactions for IDFC
+2025-12-18 18:04:59,916 - INFO - Parsing completed successfully
+2025-12-18 18:04:59,929 - INFO - 127.0.0.1 - - [18/Dec/2025 18:04:59] "POST / HTTP/1.1" 200 -
+2025-12-18 18:05:31,388 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpq3wdv0gw.pdf
+2025-12-18 18:05:32,401 - INFO - Extracted 6417 characters from PDF
+2025-12-18 18:05:32,401 - INFO - Detected issuer: ICICI Bank
+2025-12-18 18:05:32,402 - INFO - Parsing statement using ICICI parser
+2025-12-18 18:05:32,406 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 18:05:32,408 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 18:05:32,410 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 18:05:32,412 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 18:05:32,414 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 18:05:32,414 - INFO - Parsing completed successfully
+2025-12-18 18:05:32,441 - INFO - 127.0.0.1 - - [18/Dec/2025 18:05:32] "POST / HTTP/1.1" 200 -
+2025-12-18 18:06:15,683 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp_a13xxdw.pdf
+2025-12-18 18:06:16,382 - INFO - Extracted 3671 characters from PDF
+2025-12-18 18:06:16,386 - INFO - Detected issuer: HDFC Bank
+2025-12-18 18:06:16,386 - INFO - Parsing statement using HDFC parser
+2025-12-18 18:06:16,388 - INFO - Extracted card_last_4_digits: 4341
+2025-12-18 18:06:16,389 - INFO - Extracted billing_period: 23/10/2024
+2025-12-18 18:06:16,389 - INFO - Extracted payment_due_date: 12/11/2024
+2025-12-18 18:06:16,390 - INFO - Extracted total_amount_due: 83,794.00
+2025-12-18 18:06:16,392 - INFO - Extracted 5 transactions for HDFC
+2025-12-18 18:06:16,392 - INFO - Parsing completed successfully
+2025-12-18 18:06:16,409 - INFO - 127.0.0.1 - - [18/Dec/2025 18:06:16] "POST / HTTP/1.1" 200 -
+2025-12-18 18:14:10,164 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-18 18:14:10,164 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 18:16:43,508 - INFO - 127.0.0.1 - - [18/Dec/2025 18:16:43] "[33mGET / HTTP/1.1[0m" 404 -
+2025-12-18 18:16:44,693 - INFO - 127.0.0.1 - - [18/Dec/2025 18:16:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-18 18:18:03,269 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmpkilgkvur.pdf
+2025-12-18 18:18:03,841 - INFO - Extracted 2540 characters from PDF
+2025-12-18 18:18:03,842 - INFO - Detected issuer: Axis Bank
+2025-12-18 18:18:03,846 - INFO - Parsing statement using AXIS parser
+2025-12-18 18:18:03,847 - INFO - Extracted card_last_4_digits: 1060
+2025-12-18 18:18:03,848 - INFO - Extracted billing_period: 16/04/2021 - 15/05/2021
+2025-12-18 18:18:03,849 - INFO - Extracted payment_due_date: 04/06/2021
+2025-12-18 18:18:03,850 - INFO - Extracted total_amount_due: 1,289.00
+2025-12-18 18:18:03,851 - INFO - Extracted 5 transactions for Axis
+2025-12-18 18:18:03,851 - INFO - Parsing completed successfully
+2025-12-18 18:18:03,854 - INFO - 127.0.0.1 - - [18/Dec/2025 18:18:03] "POST /api/parse HTTP/1.1" 200 -
+2025-12-18 18:18:24,887 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp6u67gse5.pdf
+2025-12-18 18:18:25,233 - INFO - Extracted 1885 characters from PDF
+2025-12-18 18:18:25,234 - ERROR - Unable to detect credit card issuer from PDF
+2025-12-18 18:18:25,247 - INFO - 127.0.0.1 - - [18/Dec/2025 18:18:25] "[31m[1mPOST /api/parse HTTP/1.1[0m" 400 -
+2025-12-18 18:20:21,746 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp2uimqgwy.pdf
+2025-12-18 18:20:22,682 - INFO - Extracted 6417 characters from PDF
+2025-12-18 18:20:22,682 - INFO - Detected issuer: ICICI Bank
+2025-12-18 18:20:22,682 - INFO - Parsing statement using ICICI parser
+2025-12-18 18:20:22,683 - INFO - Extracted card_last_4_digits: 0000
+2025-12-18 18:20:22,684 - WARNING - Could not extract billing_period for ICICI
+2025-12-18 18:20:22,686 - WARNING - Could not extract payment_due_date for ICICI
+2025-12-18 18:20:22,688 - WARNING - Could not extract total_amount_due for ICICI
+2025-12-18 18:20:22,690 - INFO - Extracted 32 transactions for ICICI
+2025-12-18 18:20:22,690 - INFO - Parsing completed successfully
+2025-12-18 18:20:22,692 - INFO - 127.0.0.1 - - [18/Dec/2025 18:20:22] "POST /api/parse HTTP/1.1" 200 -
+2025-12-18 18:28:27,308 - INFO - Processing PDF: C:\Users\VIRTID~1\AppData\Local\Temp\tmp7tv9gbmh.pdf
+2025-12-18 18:28:28,728 - INFO - Extracted 16251 characters from PDF
+2025-12-18 18:28:28,729 - INFO - Detected issuer: IDFC First Bank
+2025-12-18 18:28:28,729 - INFO - Parsing statement using IDFC parser
+2025-12-18 18:28:28,730 - INFO - Extracted card_last_4_digits (IDFC): 0010
+2025-12-18 18:28:28,731 - WARNING - Could not extract billing_period for IDFC
+2025-12-18 18:28:28,732 - INFO - Extracted payment_due_date (IDFC): 06/03/2024
+2025-12-18 18:28:28,733 - WARNING - Could not extract total_amount_due for IDFC
+2025-12-18 18:28:28,734 - INFO - Extracted 3 transactions for IDFC
+2025-12-18 18:28:28,734 - INFO - Parsing completed successfully
+2025-12-18 18:28:28,737 - INFO - 127.0.0.1 - - [18/Dec/2025 18:28:28] "POST /api/parse HTTP/1.1" 200 -
