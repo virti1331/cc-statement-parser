@@ -163,13 +163,24 @@ curl -X POST http://127.0.0.1:5000/api/parse \
 - Located at `frontend/index.html`
 - Simple single‑page UI that:
   - Lets you pick a PDF file
-  - Sends it to `http://127.0.0.1:5000/api/parse`
+  - Sends it to the backend `POST /api/parse` endpoint
   - Shows the parsed JSON result or error message
 
 ### Running the Frontend
 
-You can open `frontend/index.html` directly in a browser, or serve it with any static HTTP server (e.g. VS Code Live Server, `python -m http.server`, etc.).  
-Ensure the backend Flask server is running before using the UI.
+For **deployment**, the frontend is designed to work best when served from the **same origin** as the backend:
+
+- Serve `index.html` and other static assets from the same host/port as the Flask app.
+- Proxy `/api/parse` to the Flask backend (for example, via Nginx or any reverse proxy).
+- The frontend uses a relative API URL (`/api/parse` by default) so everything lives under a single origin.
+
+For **local development** you can still point it directly at a running backend on `http://127.0.0.1:5000` by opening the browser console and setting:
+
+```js
+window.API_URL_OVERRIDE = "http://127.0.0.1:5000/api/parse";
+```
+
+Then reload the page.
 
 ---
 

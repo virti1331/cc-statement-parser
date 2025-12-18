@@ -222,7 +222,14 @@
     </div>
 
     <script>
-      const API_URL = "http://127.0.0.1:5000/api/parse";
+      // By default, call the API on the same origin so frontend + backend can
+      // be deployed behind a single host (e.g. Nginx serving static + proxying /api).
+      // For local development you can override via: window.API_URL_OVERRIDE.
+      const API_URL =
+        window.API_URL_OVERRIDE ||
+        (window.location.origin.startsWith("file:")
+          ? "http://127.0.0.1:5000/api/parse"
+          : `${window.location.origin}/api/parse`);
 
       const fileInput = document.getElementById("file-input");
       const fileNameSpan = document.getElementById("file-name");
