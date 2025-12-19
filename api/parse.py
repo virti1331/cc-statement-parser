@@ -32,9 +32,8 @@ def add_cors_headers(response):
     return response
 
 
-@app.route("/", defaults={"path": ""}, methods=["POST", "OPTIONS"])
-@app.route("/<path:path>", methods=["POST", "OPTIONS"])
-def parse_handler(path):
+@app.route("/api/parse", methods=["POST", "OPTIONS"])
+def parse_handler():
     """
     Parse an uploaded PDF and return JSON with statement + transactions.
     Expects form-data with a single field: "file" (PDF).
