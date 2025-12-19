@@ -8,8 +8,15 @@ import tempfile
 from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 
-# Add backend directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'backend'))
+# Add backend directory to path - use absolute path resolution
+backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'backend'))
+if backend_path not in sys.path:
+    sys.path.insert(0, backend_path)
+
+# Also add parent directory
+parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if parent_path not in sys.path:
+    sys.path.insert(0, parent_path)
 
 from main import parse_statement
 from parser.detect_issuer import UnsupportedIssuerError
