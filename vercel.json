@@ -1,12 +1,10 @@
 {
+  "buildCommand": "pip install -r requirements.txt",
+  "outputDirectory": "frontend",
   "rewrites": [
     {
       "source": "/api/parse",
-      "destination": "/api/index.py"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
+      "destination": "/api/index"
     }
   ]
 }
